@@ -13,6 +13,7 @@
   --text:#e5e7eb;
   --muted:#94a3b8;
   --accent:#38bdf8;
+  --photo-bg:#020617;
 }
 
 .light{
@@ -21,6 +22,7 @@
   --text:#0f172a;
   --muted:#475569;
   --accent:#0284c7;
+  --photo-bg:#ffffff;
 }
 
 body{
@@ -109,7 +111,7 @@ body{
   gap:15px;
 }
 
-/* 🔵 PROFILE IMAGE – FINAL FIX */
+/* 🔵 PROFILE IMAGE – FULL PHOTO INSIDE CIRCLE */
 .hero-img{
   display:flex;
   justify-content:center;
@@ -117,18 +119,20 @@ body{
 
 .hero-img img{
   width:260px;
-  height:260px;              /* FORCE PERFECT CIRCLE */
+  height:260px;
   border-radius:50%;
-  object-fit:cover;
+  object-fit:contain;              /* 🔥 FULL PHOTO */
+  padding:14px;                    /* breathing space */
+  background:var(--photo-bg);      /* clean circle fill */
   box-shadow:0 0 35px rgba(56,189,248,0.35);
   transition:
     transform 0.45s ease,
     box-shadow 0.45s ease;
 }
 
-/* Levitation ONLY on hover */
+/* Hover levitation only */
 .hero-img img:hover{
-  transform:translateY(-14px) scale(1.03);
+  transform:translateY(-12px) scale(1.02);
   box-shadow:0 0 55px rgba(56,189,248,0.6);
 }
 
